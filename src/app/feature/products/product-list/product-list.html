@@ -1,7 +1,9 @@
 <h2>Products</h2>
 
-<ul>
-  <li *ngFor="let p of products">
-    {{ p.name }} - {{ p.price }}
-  </li>
-</ul>
+<div class="products-grid">
+  <div class="product-card" *ngFor="let p of products">
+    <h3>{{ p.name }}</h3>
+    <p>{{ p.price }} EGP</p>
+  </div>
+</div>
+

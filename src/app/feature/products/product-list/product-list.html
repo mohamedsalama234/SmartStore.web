@@ -4,6 +4,11 @@
   <div class="product-card" *ngFor="let p of products">
     <h3>{{ p.name }}</h3>
     <p>{{ p.price }} EGP</p>
+    <button
+  class="btn btn-primary w-100"
+  [routerLink]="['/products', p.id]">
+  View Details
+</button>
   </div>
 </div>
 

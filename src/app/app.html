@@ -19,11 +19,14 @@
       </ul>
 
       <div class="d-flex align-items-center gap-2">
-        <a routerLink="/login" class="btn btn-outline-light btn-sm px-4">
+        <a *ngIf="!authService.isLoggedIn()" routerLink="/login" class="btn btn-outline-light btn-sm px-4">
           Login
         </a>
-        <a routerLink="/register" class="btn btn-primary btn-sm px-4 shadow-sm">
+        <a *ngIf="!authService.isLoggedIn()" routerLink="/register" class="btn btn-primary btn-sm px-4 shadow-sm">
           Register
+        </a>
+        <a *ngIf="authService.isLoggedIn()" (click)="authService.logout()" class="btn btn-primary btn-sm px-4 shadow-sm">
+          Logout
         </a>
       </div>
     </div>
